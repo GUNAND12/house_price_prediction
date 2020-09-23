@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>House_price</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ 
+ <style> 
+body {
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/a7832b19468029.562daec6c858d.jpg");
+}
+</style> 
+</head>
+
+<body>
+
+ <div class="login">
+	<h1>Predict House Price</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="OverallQual" placeholder="Overall_Quality(0-10)" required="required" />
+        <input type="text" name="GrLivArea" placeholder="GrLivArea(square feet)" required="required" />
+		<input type="text" name="KitchenQual" placeholder="Kitchen_Quality(0-10)" required="required" />
+		<input type="text" name="GarageCars" placeholder="GarageCars(1-5)" required="required" />
+        <input type="text" name="Fireplaces" placeholder="Number of Fireplaces" required="required" />
+		<input type="text" name="YearBuilt" placeholder="YearBuilt" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
