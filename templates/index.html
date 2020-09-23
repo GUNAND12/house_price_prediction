@@ -24,9 +24,9 @@ body {
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="OverallQual" placeholder="Overall_Quality(0-10)" required="required" />
+    	<input type="text" name="OverallQual" placeholder="Overall_Quality(0-10) [0=worst,10=best]" required="required" />
         <input type="text" name="GrLivArea" placeholder="GrLivArea(square feet)" required="required" />
-		<input type="text" name="KitchenQual" placeholder="Kitchen_Quality(0-10)" required="required" />
+		<input type="text" name="KitchenQual" placeholder="Kitchen_Quality(0-5) [0-worst,5=best]" required="required" />
 		<input type="text" name="GarageCars" placeholder="GarageCars(1-5)" required="required" />
         <input type="text" name="Fireplaces" placeholder="Number of Fireplaces" required="required" />
 		<input type="text" name="YearBuilt" placeholder="YearBuilt" required="required" />
